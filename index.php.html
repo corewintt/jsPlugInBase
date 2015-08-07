@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jsModulBase.js"></script>
+</head>
+<body>
+<style type="text/css">
+    .canvas {
+        border: 1px #ccc solid;
+        width: 1000px;
+        height: 500px;
+        position: relative;
+        margin: 10px auto;
+    }
+
+    .box {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 1px #000 solid;
+    }
+</style>
+
+<div class="canvas">
+    <div class="box" style="top:10px;left: 40px;">1</div>
+    <div class="box" style="top:100px;left: 40px;">2</div>
+    <div class="box" style="top:100px;left: 400px;">3</div>
+    <div class="box box4" style="top:10px;left: 400px;">4</div>
+</div>
+
+<script type="text/javascript">
+
+    for (var i = 0; i < document.getElementsByClassName('box').length; i++)
+    {
+        var modal = new Modal(document.getElementsByClassName('box')[i]);
+    }
+
+    var modal = new Modal(document.getElementsByClassName('box4')[0]);
+    modal.open();
+</script>
+</body>
+</html>
